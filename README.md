@@ -27,6 +27,6 @@ Part 2: True Song Equalizer
   Note:see page2 of PDF
 ******************************************************************************************************************
 What to turn in:
-• Team members name
-• The Xcode project of the updated file (as a zipped/compressed file or GitHub link).
-• Answer the questions posed above, upload as a text file in the Xcode project.
+- Team members name
+- The Xcode project of the updated file (as a zipped/compressed file or GitHub link).
+- Answer the questions posed above, upload as a text file in the Xcode project.
