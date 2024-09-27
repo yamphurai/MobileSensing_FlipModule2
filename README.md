@@ -1,2 +1,5 @@
 # MobileSensing_FlipModule2
-Flip module 2 for Mobile sensing class
+Details
+- use lazy instantiation whenever possible
+- deallocate any memory properly
+- 
