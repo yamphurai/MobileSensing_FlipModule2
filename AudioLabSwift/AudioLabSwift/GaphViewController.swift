@@ -58,8 +58,7 @@ class GraphViewController: UIViewController {
         audio.play()
     }
 
-    
-    
+
     
     // Called when the view is about to disappear after processing 20 samples
     override func viewWillDisappear(_ animated: Bool) {
@@ -82,8 +81,12 @@ class GraphViewController: UIViewController {
                 forKey: "time"
             )
             
+            
+            // Use the maximaInWindows property from AudioModel for the shortGraph data
+            let shortGraphData = self.audio.maximaInWindows
+            
             // Extract 20 random points from timeData
-            let shortGraphData = extractRandomPoints(from: self.audio.timeData, count: 20)
+            // let shortGraphData = extractRandomPoints(from: self.audio.timeData, count: 20)
             
             graph.updateGraph(
                 data: shortGraphData,

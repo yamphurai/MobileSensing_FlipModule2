@@ -2,8 +2,6 @@
 //  Copyright © 2020 Eric Larson. All rights reserved.
 
 
-//just checking
-
 import Foundation
 import Accelerate   // provides functions for digital signal processing and linear algebra operations
 
@@ -29,6 +27,27 @@ class AudioModel {
     private var isPlaying: Bool = false
     private var isPaused: Bool = false
     
+    // Computed property "maximaInWindows" to get the maxima of 20 windows from the fft array
+    var maximaInWindows: [Float] {
+        
+        let windowSize = fftData.count/20   //size of window = # of fft data/20
+        var maxima: [Float] = []            // to store maxima for each window
+        
+        // run loop from 0 to 19 windows to get maximum of each window
+        for i in 0..<20 {
+            let startIndex = i * windowSize    //starting index
+            let endIndex = min((i+1) * windowSize, fftData.count)   //minimum between two values to get the last index
+            let window = fftData[startIndex..<endIndex]       // slice of fftData using starting & ending indices from current window
+            
+            //if maximum value is found for the current window
+            if let maxInWindow = window.max() {
+                maxima.append(maxInWindow)   //append the maximum value to teh maxima array
+            }
+        }
+        return maxima
+    }
+    
+
     // MARK: Public Methods
     
     // Initialize AudioModel with buffer size
