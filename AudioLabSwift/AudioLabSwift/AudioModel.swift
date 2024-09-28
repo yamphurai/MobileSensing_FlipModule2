@@ -2,6 +2,8 @@
 //  Copyright © 2020 Eric Larson. All rights reserved.
 
 
+//just checking
+
 import Foundation
 import Accelerate   // provides functions for digital signal processing and linear algebra operations
 
